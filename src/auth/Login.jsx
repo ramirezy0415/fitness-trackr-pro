@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "./AuthContext";
-import { NavLink } from "react-router";
+import { Link } from "react-router";
 
 /** A form that allows users to log into an existing account. */
 export default function Login() {
@@ -35,7 +35,7 @@ export default function Login() {
         <button>Login</button>
         {error && <p role="alert">{error}</p>}
       </form>
-      <NavLink to="/register">Need an account? Register here.</NavLink>
+      <Link to="/register">Need an account? Register here.</Link>
     </>
   );
 }
