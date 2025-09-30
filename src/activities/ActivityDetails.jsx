@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { useParams, useNavigate, useOutletContext } from "react-router";
+import React from "react";
+import { useNavigate, useOutletContext } from "react-router";
 
 export default function ActivityDetails() {
-  const { activityId } = useParams();
   const navigate = useNavigate();
 
-  const { selectedActivity } = useOutletContext();
+  const { selectedActivity, tryDelete, token } = useOutletContext();
 
   return (
     <section>
       <h3> {selectedActivity.name}</h3>
       <p>Description: {selectedActivity.description}</p>
       <p>Created By: {selectedActivity.creatorName}</p>
+      {token && <button onClick={tryDelete}>Delete</button>}
     </section>
   );
 }
